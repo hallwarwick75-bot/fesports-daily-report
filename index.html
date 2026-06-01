@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>FE Sports Daily Customer Report</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -168,21 +169,11 @@
     cursor: pointer;
     transition: all 0.15s;
     background: var(--cream);
-    position: relative;
   }
 
-  .photo-drop:hover, .photo-drop.drag-over {
+  .photo-drop:hover {
     border-color: var(--accent);
     background: var(--accent-soft);
-  }
-
-  .photo-drop input[type="file"] {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
   }
 
   .photo-drop .drop-text {
@@ -551,13 +542,13 @@
 
     <div class="photo-area">
       <label>Photos (optional)</label>
-      <div class="photo-drop" id="photoDrop">
-        <input type="file" id="photoInput" accept="image/*" multiple>
+      <input type="file" id="photoInput" accept="image/*" multiple style="display:none;">
+      <label for="photoInput" class="photo-drop">
         <div class="drop-text">
           <strong>📷 Tap to add photos</strong>
           Select one or multiple images
         </div>
-      </div>
+      </label>
       <div class="photo-previews" id="photoPreviews"></div>
     </div>
 
