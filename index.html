@@ -654,14 +654,14 @@
       const img = new Image();
       img.onload = () => {
         // Store at good quality for display (800px, 80%)
-        const MAX = 800;
+        const MAX = 1000;
         let w = img.width, h = img.height;
         if (w > MAX) { h = Math.round(h * MAX / w); w = MAX; }
         const canvas = document.createElement('canvas');
         canvas.width = w;
         canvas.height = h;
         canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-        const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.65);
         pendingPhotos.push({ dataUrl, name: file.name });
         renderPendingPhotos();
       };
